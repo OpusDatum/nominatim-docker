@@ -131,6 +131,11 @@ COPY start.sh /app/start.sh
 COPY startapache.sh /app/startapache.sh
 COPY startpostgres.sh /app/startpostgres.sh
 
+# Remove vulnerabilities
+RUN rm -r /usr/lib/python3/dist-packages/setuptools-59.6.0.egg-info
+RUN rm -r /usr/lib/python3/dist-packages/wheel-0.37.1.egg-info
+RUN rm -r /usr/lib/python3/dist-packages/Babel-2.8.0.egg-info
+
 # Collapse image to single layer.
 FROM scratch
 
