@@ -30,7 +30,7 @@ docker run -it \
   -e REPLICATION_URL=https://download.geofabrik.de/europe/monaco-updates/ \
   -p 8080:8080 \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 Port 8080 is the nominatim HTTP API port and 5432 is the Postgres port, which you may or may not want to expose.
@@ -111,7 +111,7 @@ docker run -it \
   -e REPLICATION_URL=https://download.geofabrik.de/europe/monaco-updates/ \
   -p 8080:8080 \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 ### Configuration Example
@@ -137,7 +137,7 @@ docker run -it --shm-size=1g \
   -v nominatim-data:/var/lib/postgresql/14/main \
   -p 8080:8080 \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 ## OpenStreetMap Data Extracts
@@ -160,7 +160,7 @@ docker run -it \
   -p 8080:8080 \
   -v /osm-maps/data:/nominatim/data \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 where the _/osm-maps/data/_ directory contains _monaco-latest.osm.pbf_ file that is mounted and available in container: _/nominatim/data/monaco-latest.osm.pbf_
@@ -191,7 +191,7 @@ docker run -it \
   -p 8080:8080 \
   -v /osm-maps/data:/nominatim/data \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 where the _/osm-maps/data/_ directory contains _merged.osm.pbf_ file that is mounted and available in container: _/nominatim/data/merged.osm.pbf_
@@ -207,7 +207,7 @@ docker run -it \
   -p 8080:8080 \
   -v /osm-maps/extras:/nominatim/extras \
   --name nominatim \
-  mediagis/nominatim:4.4
+  opusdatum/nominatim:4.4
 ```
 
 Where the path to the importance dump is given relative to the container. (The file does not need to be named `wikimedia-importance.sql.gz`.) The same works for `IMPORT_US_POSTCODES` and `IMPORT_GB_POSTCODES`.
